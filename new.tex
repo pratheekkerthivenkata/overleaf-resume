@@ -1,0 +1,566 @@
+%-------------------------
+% Resume in Latex
+% Author : Aras Gungore
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{lipsum}
+
+
+%---------- FONT OPTIONS ----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.55in}
+\addtolength{\textheight}{3.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\fontsize{10}{11}\selectfont
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\fontsize{9}{10}\selectfont{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{ #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeEducationHeading}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, topsep=0.5pt,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[topsep=1.5pt,itemsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+
+
+
+% %-------------------------
+% % modified Custom commands
+
+% \newcommand{\resumeItem}[1]{
+%   \item{
+%     {#1 \vspace{-2pt}}
+%   }
+% }
+
+
+% \newcommand{\resumeSubheading}[4]{
+%   \vspace{1pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & #2 \\
+%       \textit{#3} & \textit{ #4} \\
+%     \end{tabular*}\vspace{-4pt}
+% }
+
+
+% % \newcommand{\resumeSubSubheading}[2]{
+% %     \vspace{2pt}\item
+% %     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+% %       \textit{\small#1} & \textit{\small #2} \\
+% %     \end{tabular*}\vspace{-7pt}
+% % }
+
+
+% \newcommand{\resumeEducationHeading}[6]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & #2 \\
+%       \textit{#3} & \textit{ #4} \\
+%       \textit{#5} & \textit{ #6} \\
+%     \end{tabular*}\vspace{-5pt}
+% }
+
+
+% \newcommand{\resumeProjectHeading}[2]{
+%     \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+%       #1 & #2 \\
+%     \end{tabular*}\vspace{-7pt}
+% }
+
+
+% \newcommand{\resumeOrganizationHeading}[4]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & \textit{ #2} \\
+%       \textit{#3}
+%     \end{tabular*}\vspace{-7pt}
+% }
+
+% \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+% \renewcommand\labelitemii{$\vcenter{\hbox{$\bullet$}}$}
+
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={},partopsep=0.05pt]
+% \setlength\itemsep{1em}
+% }
+% \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+% \newcommand{\resumeItemListStart}{\begin{itemize}
+% }
+% \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% %-------------------------------------------
+
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%---------- HEADING ----------
+
+\begin{center}
+    \textbf{\Large \scshape Sai Pratheek Kerthi Venkata} \\ \vspace{3pt}
+    \small
+    \faMobile \hspace{.5pt} \href{tel:+17202336867}{+1 720 233 6867}
+    $|$
+    \faAt \hspace{.5pt} \href{mailto:saipratheek.kerthivenkata@colorado.edu}{saipratheek.kerthivenkata@colorado.edu}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/pratheekkv/}{linkedin.com/in/pratheekkv/}
+    %$|$
+   % $|$
+    %\faGithub 
+    \
+    %\hspace{2pt} %\href{https://github.com/pratheekkerthivenkata}{Github}
+    %$|$
+    %\faGlobe \hspace{.5pt} \href{https://arasgungore.github.io}{Portfolio}
+    %\hspace{20pt}
+    $|$
+    \faRssSquare \hspace{.5pt}
+    \href{https://www.cloudthat.com/resources/author/sai-pratheek/}{Blogs}
+\end{center}
+\vspace{-22pt}
+
+%------------SUMMARY--------------
+
+\section{Summary}
+% Versatile, detail‑focused data engineer with a strong record of building reliable, high‑speed ETL/ELT pipelines and architecting scalable data‑warehouse \& lakehouse solutions that turn raw information into clear, business‑ready insights. Ready to join an innovative company, bringing sharp problem‑solving and a collaborative approach to tackle large‑scale data challenges.
+
+Versatile, detail-focused professional skilled in training, evaluating, and deploying ML models that transform raw data into actionable, business-ready insights, I excel at designing high-speed ETL/ELT pipelines and architecting scalable data-warehouse \& lakehouse solutions. I bring sharp problem-solving skills and a collaborative mindset to drive value across full-stack data challenges for an innovative company.
+
+\vspace{-10pt}
+%----------- EDUCATION -----------
+\fontsize{9}{10}\selectfont
+
+\section{Education}
+  \vspace{-1.5pt}
+  \resumeSubHeadingListStart
+    
+    %\resumeEducationHeading
+      %{Gokaraju Rangaraju Institute of Engineering and Technology
+      % \normalfont{(Admission rate: 0.09\%)}
+      %}{Hyderabad, Telangana, India}
+      %{B.Tech. in Electronics and Communications Engineering;   \textbf{GPA: 9.25/10.00}}{Aug 2017 \textbf{--} Jul 2021}
+      %{Minor Degree in Computer Engineering;   \textbf{GPA: 3.89/4.00}}{Oct 2020 \textbf{--} Jun 2023 (Expected)}
+        % \resumeItemListStart
+            % \resumeItem{\textbf{Relevant coursework:} Calculus I-II, Matrix Theory, Differential Equations, Materials Science, Electrical Circuits I-II, Digital System Design, Numerical Methods, Probability Theory, Electronics I-II, Signals and Systems, Electromagnetic Field Theory, Energy Conversion, System Dynamics and Control, Communication Engineering}
+        % \resumeItemListEnd
+    \resumeSubheading
+      {University of Colorado, Boulder
+      % \normalfont{(Admission rate: 0.09\%)}
+      }{Boulder, CO, United States}
+      {MS in Data Science \textbf{\footnotesize{GPA: 3.83/4.00}}}{Aug 2023 \textbf{--} May 2025}
+      % \vspace{0.5pt}
+     \resumeItemListStart
+        \footnotesize{\resumeItem{\textbf{Courses:} Data Mining, Big Data Arch., Machine Learning, Adv. Robotics, Computer Vision \& Deep Learning}}
+    \resumeItemListEnd
+   % \vspace{-6pt}     
+    % \resumeSubheading
+    %   {Gokaraju Rangaraju Institute of Engineering and Technology
+    %   % \normalfont{(Admission rate: 0.09\%)}
+    %   }{Hyderabad, Telangana, India}
+    %   {B.Tech. in Electronics and Communications Engineering;   \textbf{\footnotesize{GPA: 9.08/10.00}}}{Aug 2017 \textbf{--} Jul 2021} \vspace{-5pt}
+
+    
+  \resumeSubHeadingListEnd
+\vspace{-10pt}
+
+%\begin{comment}
+
+%\end{comment}
+%----------- SKILLS -----------
+\section{Skills}
+  % \vspace{2pt}
+  \resumeSubHeadingListStart
+
+    \item{
+%        \textbf{Key Competencies :}{ IoT, Data Science, Data Warehousing, Engineering, Analytics, Big Data \& Cloud} \\  
+        %\vspace{1pt}
+        \textbf{Key Skills : }{ETL/ELT, Data Lakehouse \& Warehouse architecture, Cloud Platforms, Database modeling, LLM Finetuning, RAG}}\vspace{-7pt}
+    \item{
+        \textbf{Programming Languages:}{ Python, C, SQL, OOPs \& Data Structures}}\vspace{-7pt}
+    % \item{    
+    %     \textbf{Frameworks \& Libraries : }{LangChain, Apache Spark, Kafka, Airflow, Flink, Delta Lake, Pytorch, Keras \& tensorflow}}\vspace{-7pt}
+    \item{ 
+        % \textbf{Cloud Platforms:}{ AWS, Azure \& GCP} %\\ \vspace{1pt}
+        \textbf{AWS : }{EC2, EMR, Athena, Glue, Redshift, RDS, IoT, SageMaker, MSK, Kinesis, Rekognition, Personalize, Kendra \& QuickSight}} \vspace{-7pt}
+    % \item{
+        % \textbf{Azure: }{Function App, Logic App, Databases, PowerBI, Machine Learning Studio, Form Recognizer, DevOps \& Data Factory}} \vspace{-7pt}
+        % \textbf{GCP: }{ BigQuery, Cloud Storage, Cloud Functions \& Dataflow} \\
+         %\vspace{1pt}
+%        \textbf{Operating Systems:}{ Windows, Linux, Ubuntu, Raspbian OS} \\ %\vspace{1pt}
+    \item{
+        \textbf{Software/Tools : }{Databricks, Grafana, Embedded Devices, Arduino IDE, Git,  Docker \& Kubernetes}}\vspace{-7pt}
+    \item{
+         \textbf{Database Services : }{MySQL, PostgreSQL, MongoDB, DynamoDB, CosmosDB, InfluxDB, Pinecone}}
+        % \textbf{Cloud Warehouses:}{ Amazon Redshift \& Azure Synapse Analytics}\\
+        %%\vspace{1pt}
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+  \resumeSubHeadingListEnd
+\vspace{-12pt}
+%----------- WORK EXPERIENCE -----------
+
+\section{Professional Experience}
+
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {CLD - 9 \emph{\href{https://www.cld-nine.com/}{\color{blue}\faPaperclip
+}}}{Boulder, CO, USA}
+      {AI \& Backend Engineer - Co-op}{Oct 2024 \textbf{--} Present} 
+      % \vspace{1pt}
+        \resumeItemListStart
+            \resumeItem{Development and optimization of \textbf{LLMs} for CLD-9’s \textbf{AI-driven recommendation engine} using \textbf{LangChain} \& \textbf{RAG (Retrieval-Augmented Generation)} deployed using \textbf{Fastapi}, enhancing predictive accuracy, response latency, and contextual relevance through continuous fine-tuning.}
+            \resumeItem{Developed \textbf{robust Database Models} and \textbf{RESTful} backend services on \textbf{AWS} using Python, implemented efficient \textbf{APIs} and \textbf{webhooks} to enhance website functionality, enabling dynamic product displays and real-time inventory updates.}
+        \resumeItemListEnd
+  % \vspace{+2pt}
+
+  \resumeSubheading
+      {University of Colorado, Boulder}{Boulder, CO, USA}
+    %   {Graduate Teaching Assistant - MSDS Online}{May 2024 \textbf{--} Present} %\vspace{-2pt}
+    %     \resumeItemListStart
+    %         \resumeItem{Guiding students through complex \textbf{data mining methodologies}, including clustering, classification, and association rule mining, while supporting the implementation of \textbf{machine learning algorithms} in their projects.}
+    %     \resumeItemListEnd
+    % \vspace{-12pt}
+    % \resumeSubheading
+    %   % {Human Interaction \& Robotics Group - CU Boulder}{Boulder, CO, USA}
+    %   {}{}
+      {Graduate Student Researcher - Human Interaction \& Robotics Group}{Oct 2023 \textbf{--} Oct 2024} %\vspace{-2pt}
+        \resumeItemListStart
+
+            % \resumeItem{Specialized in \textbf{diffusion-based generative models} for motion planning and object manipulation with \textbf{industrial robotic arms}, optimizing advanced automation workflows. Designed a \textbf{spatial positioning algorithm} integrating \textbf{SAM} \& \textbf{CREStereo} vision models, achieving translation of real-world object locations into robotic coordinates with \textbf{98\%} accuracy.}
+  %          \resumeItem{\textbf{Tools Used:} Pybullet, Python, Motion Planner, ROS Noetic, Deep Learning, Computer Vision, LLM.}
+            \resumeItem{Specialized in generating motion plans for object manipulation with \textbf{industrial robots}. Designed a \textbf{spatial positioning algorithm} integrating \textbf{SAM} \& \textbf{CREStereo} vision models, translating real-world object locations into robotic co-ordinates with \textbf{98\%} accuracy.}
+        \resumeItemListEnd
+    % \vspace{-6pt}
+
+    \resumeSubheading
+      {CloudThat Technologies Pvt Ltd. \emph{\href{https://www.cloudthat.com/}{\color{blue}\faPaperclip
+}}}{Bangalore, Karnataka, India}
+      {ML Engineer $|$ Senior Research Associate - Data \& AIoT }{Aug 2022 \textbf{--} Aug 2023} %\vspace{-4pt}
+      
+        \resumeItemListStart
+            %\resumeItem{Designed and engineered scalable cloud ML and Analytics solutions to address business and engineering challenges on multiple cloud platforms.}
+            \resumeItem{\textbf{Led a team} designing \& implementing \textbf{a hybrid fraud detection algorithm} for an insurance firm, \textbf{mitigating revenue loss from pre-matured claims}. Developed \textbf{template-specific OCR models (Python, regex)} for accurate data extraction, achieving \textbf{\$5-10K USD in annual savings.}}
+
+            \resumeItem{Deployed a \textbf{real-time inference pipeline} using \textbf{AWS Lambda, Rekognition, \& SageMaker}, orchestrated via \textbf{Apache Airflow}, \textbf{reducing decision-making time} by \textbf{60\%} and streamlining fraud detection workflows.}
+
+            \resumeItem{Ensured strict compliance with data security and privacy guidelines under the Indian IT Act regulations, securely handling storage, retrieval, and processing of \textbf{Personally Identifiable Information (PII)}.}
+            
+            \resumeItem{Contributed to a real-time data pipeline transmitting \textbf{EV telemetry} to \textbf{kafka topics}, and then distributed the data to multiple  \textbf{Logstash consumers} for realtime processing and \textbf{Snowflake} for analytics, achieving \textbf{millisecond latency} and enabling real-time insights on \textbf{Grafana}.}
+
+            \resumeItem{Developed and optimized \textbf{8+ SQL scripts} and materialized views on \textbf{Snowflake} to process high-speed telemetry data. Streams for continuous data ingestion and incremental loading into materialized views.}
+            
+            % \resumeItem{\textbf{Led a team} in designing a \textbf{hybrid fraud detection algorithm} for an insurance firm, \textbf{saving \$5–10K annually}. Built \textbf{template-specific OCR models} to process \textbf{unstructured documents}, applying \textbf{Python} \& \textbf{regex} for data extraction.}
+
+            
+            
+            % \resumeItem{\textbf{Led a team} in developing a \textbf{real-time fraud detection} pipeline for an insurance corporation by batch processing pipelines built using \textbf{AWS Lambda, Rekognition} and \textbf{QuickSight} orchestrated using \textbf{Apache Airflow}, \textbf{reducing decision-making time} by \textbf{60\%} \& \textbf{saving} an additional \textbf{5 - 10k USD} on claims \textbf{annually}.}
+
+            
+            % \resumeItem{\textbf{Architected scalable solutions and authored technical blogs}, addressing client-facing challenges and optimizing cloud platform services to enhance operational efficiency and knowledge sharing.}
+            % \resumeItem{Experienced in handling large, complex, multi-dimensional datasets including structured, unstructured, and real-time data.}
+            
+            % \resumeItem{Expertise in cloud AI/ML, IoT, ETL \& real-time BI solutions on cloud platforms using Python, SQL \& Apache Spark}
+            
+            
+            % \resumeItem{Reduced the data processing time by 200\% and improved their BI performance by 50\% by implementing a Real-time processing pipeline for an International delivery organization.}
+   %         \resumeItem{\textbf{Tools Used:} AWS, Azure, Databricks, Embedded Devices, Python, SQL, Boto3, Apache Spark, Pyspark.}
+        \resumeItemListEnd
+    
+    % \resumeSubheading
+      % {Ankara Metropolitan Municipality}{Ankara, Turkey}
+      % {SCADA Engineering Intern}{Aug 2021 \textbf{--} Sep 2021}
+        % \resumeItemListStart
+            % \resumeItem{Designed GSM/GPRS-based electrical control panels that are connected to local water pump automation systems. Pump station panels use digital output data received from the SCADA control center via RF transmission to control valves and pumps. Tank station panels are charged from the PV system and refill water tanks by signaling the pump station panel when the float switch is activated.}
+            % \resumeItem{Implemented motor control circuits by reading their PLC ladder diagrams and analyzed the EPLAN project documentation, HMI, and hardware components of an RTU panel.}
+        % \resumeItemListEnd
+ \vspace{-10pt}
+    % \vspace{15pt}
+    \resumeSubheading
+      {}{}
+      {Data Engineer $|$ Research Associate - Data \& AIoT}{Sep 2021 \textbf{--} July 2022}
+      % \vspace{0.5pt}
+        \resumeItemListStart
+            % \resumeItem{Deployed scalable \textbf{cloud applications} \& \textbf{serverless solutions} for \textbf{Real-time ML} \& Analytics workloads. Accelerated \textbf{business report delivery} through efficient processing pipelines implemented \textbf{Spark SQL \& Pyspark}, cutting sla from 48 hrs to 15 mins, \textbf{99.5\% reduction}, boosting efficiency and client satisfaction.}
+
+            \resumeItem{Owned and architected a \textbf{data lakehouse} solution on \textbf{Amazon S3} using \textbf{Apache Delta Lake}, designing and deploying \textbf{production-grade ETL pipelines} on a \textbf{self-managed Databricks cluster} and \textbf{AWS Glue}, processing \textbf{2GB of data every 15 minutes} to enable near real-time analytics for a delivery platform with \textbf{80+ tables}.}
+            
+            % \resumeItem{Designed and managed a high-performance cloud data architecture leveraging }
+            \resumeItem{Developed \textbf{12+ optimized SQL \& 20+ PySpark scripts} to extract, transform, and analyze data from \textbf{Hive tables}, improving reporting efficiency by \textbf{30\%} and accelerating data-driven decision-making for supply chain optimization.}
+            
+            \resumeItem{Built and maintained \textbf{10+ interactive dashboards} in \textbf{Amazon QuickSight} for real-time shipment tracking, transaction monitoring, and employee analytics, significantly improving operational visibility and reducing SLA breaches.}
+            % \resumeItem{Orchestrated a real-time data stream processing pipeline to manage GB-scale data throughput for an EV manufacturer.}
+            %\resumeItem{Developed and optimised cloud ETL solutions, ML inference pipelines for real-time workloads. }
+            
+            % \resumeItem{Recieved highest performance rating \textbf{(A+)} for the Annual Performance Review process 2021-2022 \& \textbf{Commitment to Client - Value Award} for proactively raising and addressing the process enhancements for Q1, 2021.}
+ %           \resumeItem{\textbf{Tools Used:} AWS, Azure, GCP, Databricks, Embedded Devices, Python, SQL, Boto3, Apache Spark, Pyspark.}
+        \resumeItemListEnd
+ \vspace{-10pt}
+      \resumeSubheading
+      {}{}
+      {Research Associate}{Mar 2021 \textbf{--} Aug 2021} %\vspace{-2.5pt}
+        \resumeItemListStart
+            \resumeItem{Built and deployed \textbf{web servers} \& \textbf{containerized applications} using \textbf{Kubernetes clusters} with \textbf{LB \& WLM}.}
+            \resumeItem{Developed \& managed  \textbf{highly scalable cloud infra}, \textbf{serverless applications} for real-time alerting \& data processing.}
+
+%            \resumeItem{\textbf{Tools Used:} AWS, Azure, GCP, Kubernetes, Docker, Power Platform, Python, MySQL, Ansible, Terraform}
+        \resumeItemListEnd
+% \vspace{-5pt}
+%     \resumeSubheading
+%           {Indian National Centre for Ocean Information Services(INCOIS)}{Hyderabad, Telangana, India}
+%           {Student Intern}{9th  May 2019 \textbf{--} 30th May 2019}
+
+
+\resumeSubHeadingListEnd
+\vspace{-8pt}
+
+
+%----------- PROJECTS -----------
+
+\section{Projects}
+%\vspace{-2pt}
+%\begin{multicols}{2}
+
+\begin{itemize}[itemsep=0pt,topsep=2pt]
+
+     \item \textbf{HealthLens - AI-Powered Medical Report Analysis:} An application for medical report analysis using \textbf{Named Entity Recognition}, powered by \textbf{Mistral small} model integrated with \textbf{RAG} for contextual understanding. Built an interactive UI using \textbf{Streamlit} and \textbf{FastAPI} for seamless user experience.
+
+     \item \textbf{Real-time Credit Card Fraud Detection:} Built a real-time fraud detection pipeline using \textbf{Kafka \& Apache Flink} for automated data extraction, transformation and risk scoring. Integrated \textbf{Tableau} for real-time fraud monitoring.
+
+   % \item \textbf{\footnotesize{ML powered Insurance Risk Assessment:}} Built a pipeline which extracts text from unstructured documents and calculated risk factor per customer using \textbf{\footnotesize{Random Forest Algorithm}}, leveraging \textbf{\footnotesize{Azure ML Studio}} for streamlined data processing and inference pipelines.
+
+  % \item \textbf{\footnotesize{Gesture controlled Smart Screen using Live ML:}} A gesture tracked smart screen application made using \textbf{\footnotesize{TensorFlowLite}} model and \textbf{\footnotesize{Mediapipe}} library, deployed on \textbf{RaspberryPi}.
+%  \end{itemize}
+%  \columnbreak
+%  \begin{itemize} 
+
+
+  
+
+  
+
+
+  % \item \textbf{\footnotesize{IoT Based Electronic Cart with Built-In Billing System:}} A shopping cart attached with auto-billing system built using \textbf{\footnotesize{Python}}, \textbf{\footnotesize{MySQL}}, \textbf{\footnotesize{PyQt}}, \textbf{\footnotesize{RFID}} and \textbf{\footnotesize{RaspberryPi}}. 
+
+
+   
+%\item \textbf{Mobile Air Quality Monitoring System using Arduino \& LoRa}
+%A mobile controlled vehicle equipped with sensors to monitor the AQI of multiple regions in Real-Time and a mobile application.
+ 
+\end{itemize}
+%\end{multicols}
+\vspace{-12pt}
+
+% %----------- RESEARCH EXPERIENCE -----------
+% \section{Research Experience}
+% % \vspace{-2pt}
+%   \hspace{-5pt} \textbf{Adaptive Compressed Spectrum Sensing Using Neural Networks in Cognitive Radio Networks \emph{\href{https://doi.org/10.1080/03772063.2021.1929516}{\color{blue}\faPaperclip
+% }}}
+      
+%     %\hspace{8pt}\textbf{\begin{tabularx}{ $|$ }
+%      % \end{tabularx}}
+     
+      
+%     % \hspace{8pt}\textit{\small{Co-Author}} \hspace{370pt}\textit{\small{Nov 2019 \textbf{--}  May 2021}}
+    
+%  %   \resumeSubHeadingListStart
+
+%  %          \item{Proposed a novel Reconstruction method based on a custom Autoencoder that outperforms conventional reconstruction methods in Compressed Sensing for recovering a Wide-Band signal from its sparse state.}
+
+        
+    
+%  % \resumeSubHeadingListEnd
+
+
+% \vspace{-6pt}
+
+
+%----------- CERTIFICATES -----------
+\section{Certifications}
+  \vspace{-15pt}
+  \begin{multicols}{2}
+\begin{itemize}[itemsep=0pt]
+
+    
+         \item{
+        \textbf{AWS Data Engineer Associate} $|$ \emph{\href{https://www.credly.com/badges/6b158600-d1cb-469c-b0e9-67bfca39ab66/public_url}{\color{blue}Credly}}}{}\\ 
+        %\vspace{1pt}
+        \item{ 
+        \textbf{Azure Developer Associate } $|$ \emph{\href{https://learn.microsoft.com/api/credentials/share/en-us/PratheekKerthivenkata-7946/99E289371AF8C172?sharingId=F942F4410F0E1341}{\color{blue}Microsoft Certifications}}}{}
+        \item{
+        \textbf{Databricks Accreditations} $|$ \emph{\href{https://scq.io/2GRJ5ku}{\color{blue}Databricks Academy}}}{}\\ 
+        %\vspace{1pt}
+        %\vspace{1pt}
+        \item{
+        \textbf{AWS Training \& Certification Badges} $|$ \emph{\href{https://www.credly.com/users/sai-pratheek-k-v-d-s-n-k}{\color{blue}Credly}}}{} \\ 
+        %\vspace{1pt}
+        
+
+
+        % \textbf{Frameworks}{: X, X, X} \\
+        % \textbf{Developer Tools}{: X, X, X} \\
+        % \textbf{Libraries}{: X, X, X} \\
+        % \textbf{Applications}{: X, X, X}
+
+\end{itemize}
+  \end{multicols}
+
+\vspace{-18pt}
+
+
+%----------- AWARDS & ACHIEVEMENTS -----------
+
+% \section{Awards \& Achievements}
+%   \vspace{2pt}
+% \begin{multicols}{2}
+%   \resumeSubHeadingListStart
+%     \small{\item{
+%          \textbf{A+ Performance Rating for the year 2021-2022}{} \\ \vspace{1.5pt}
+       
+%        \textbf{Commitment to Client - Value Award }{} \\  \vspace{1.5pt}
+
+%     }}
+%   \resumeSubHeadingListEnd
+
+% \end{multicols}
+
+%----------- ORGANIZATIONS -----------
+
+% \section{Organizations}
+  % \resumeSubHeadingListStart
+    
+    % \resumeOrganizationHeading
+      % {Institute of Electrical and Electronics Engineers (IEEE)}{Feb 2022 -- Present}{Student Member}
+    
+  % \resumeSubHeadingListEnd
+
+
+
+%----------- HOBBIES -----------
+
+% \section{Hobbies}
+  % \resumeSubHeadingListStart
+    % \small{\item{Swimming, Fitness, Eight-ball}}
+  % \resumeSubHeadingListEnd
+
+
+
+%----------- REFERENCES -----------
+
+% \section{References}
+  % \resumeSubHeadingListStart
+    
+  % \resumeSubHeadingListEnd
+
+
+
+%-------------------------------------------
+\end{document}
